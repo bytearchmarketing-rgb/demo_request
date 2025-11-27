@@ -166,33 +166,31 @@ export default function Newsletter() {
             </div>
 
             <div className="mb-16">
-              <article className="bg-white rounded-2xl overflow-hidden border-2 border-gray-200 hover:border-orange-300 transition-all duration-300 hover:shadow-xl group">
-                <a href="/documents/Marketing-vs-Branding-Whats-The-Difference (1).pdf" target="_blank" rel="noopener noreferrer" className="block">
-                  <div className="p-8 md:p-10">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center group-hover:bg-orange-200 transition-colors">
-                        <FileText className="w-6 h-6 text-orange-600" />
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-gray-500">
+              <article className="bg-white rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg">
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                      <FileText className="w-6 h-6 text-orange-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900">
+                        Marketing vs Branding
+                      </h3>
+                      <div className="flex items-center gap-2 text-sm text-gray-500 mt-1">
                         <Calendar className="w-4 h-4" />
                         <span>November 27, 2025</span>
                       </div>
                     </div>
-
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors">
-                      Marketing vs Branding: What's The Difference?
-                    </h3>
-
-                    <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                      Understanding the distinction between marketing and branding is crucial for business success. While they work together, each serves a unique purpose in growing your business and connecting with customers. Learn how branding makes them REMEMBER you, while marketing makes them FIND you.
-                    </p>
-
-                    <div className="flex items-center text-orange-600 font-semibold group-hover:gap-3 gap-2 transition-all">
-                      <span>Read Full Article</span>
-                      <span className="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
                   </div>
-                </a>
+
+                  <div className="rounded-xl overflow-hidden">
+                    <img
+                      src="/Marketing-vs-Branding-Whats-The-Difference.png"
+                      alt="Marketing vs Branding: What's The Difference - Understanding the distinction between marketing and branding"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </div>
               </article>
             </div>
 
