@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, CheckCircle, TrendingUp, Lightbulb, Target, Loader, FileText, Calendar } from 'lucide-react';
+import { Mail, CheckCircle, TrendingUp, Lightbulb, Target, Loader, FileText, Calendar, X } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { supabase } from '../lib/supabase';
@@ -7,6 +7,7 @@ import { supabase } from '../lib/supabase';
 export default function Newsletter() {
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -168,28 +169,33 @@ export default function Newsletter() {
             <div className="mb-16">
               <article className="bg-white rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg">
                 <div className="p-6 md:p-8">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                      <FileText className="w-6 h-6 text-orange-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-bold text-gray-900">
-                        Marketing vs Branding
-                      </h3>
-                      <div className="flex items-center gap-2 text-sm text-gray-500 mt-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>November 27, 2025</span>
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="w-full text-left group"
+                  >
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                        <FileText className="w-6 h-6 text-orange-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+                          Marketing vs Branding
+                        </h3>
+                        <div className="flex items-center gap-2 text-sm text-gray-500 mt-1">
+                          <Calendar className="w-4 h-4" />
+                          <span>November 27, 2025</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="rounded-xl overflow-hidden">
-                    <img
-                      src="/Marketing-vs-Branding-Whats-The-Difference.png"
-                      alt="Marketing vs Branding: What's The Difference - Understanding the distinction between marketing and branding"
-                      className="w-full h-auto"
-                    />
-                  </div>
+                    <div className="rounded-xl overflow-hidden cursor-pointer group-hover:opacity-90 transition-opacity">
+                      <img
+                        src="/Marketing-vs-Branding-Whats-The-Difference.png"
+                        alt="Marketing vs Branding: What's The Difference - Understanding the distinction between marketing and branding"
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </button>
                 </div>
               </article>
             </div>
@@ -276,6 +282,32 @@ export default function Newsletter() {
       </section>
 
       <Footer />
+
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <button
+            onClick={() => setIsModalOpen(false)}
+            className="absolute top-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
+            aria-label="Close"
+          >
+            <X className="w-6 h-6 text-gray-900" />
+          </button>
+
+          <div
+            className="max-w-6xl max-h-[90vh] overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src="/Marketing-vs-Branding-Whats-The-Difference.png"
+              alt="Marketing vs Branding: What's The Difference - Understanding the distinction between marketing and branding"
+              className="w-full h-auto rounded-lg shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
