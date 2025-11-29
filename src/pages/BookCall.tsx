@@ -12,8 +12,6 @@ export default function BookCall() {
     email: '',
     phone: '',
     business_name: '',
-    preferred_date: '',
-    preferred_time: '',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
@@ -30,8 +28,6 @@ export default function BookCall() {
           email: formData.email,
           phone: formData.phone,
           business_name: formData.business_name || null,
-          preferred_date: formData.preferred_date,
-          preferred_time: formData.preferred_time,
           message: formData.message || null
         }]);
 
@@ -169,49 +165,6 @@ export default function BookCall() {
                       placeholder="Your Company LLC"
                       disabled={status === 'loading'}
                     />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="preferred_date" className="block text-sm font-semibold text-gray-900 mb-2">
-                      Preferred Date *
-                    </label>
-                    <input
-                      type="date"
-                      id="preferred_date"
-                      value={formData.preferred_date}
-                      onChange={(e) => setFormData({ ...formData, preferred_date: e.target.value })}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                      required
-                      disabled={status === 'loading'}
-                      min={new Date().toISOString().split('T')[0]}
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="preferred_time" className="block text-sm font-semibold text-gray-900 mb-2">
-                      Preferred Time *
-                    </label>
-                    <select
-                      id="preferred_time"
-                      value={formData.preferred_time}
-                      onChange={(e) => setFormData({ ...formData, preferred_time: e.target.value })}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                      required
-                      disabled={status === 'loading'}
-                    >
-                      <option value="">Select a time</option>
-                      <option value="9:00 AM">9:00 AM</option>
-                      <option value="10:00 AM">10:00 AM</option>
-                      <option value="11:00 AM">11:00 AM</option>
-                      <option value="12:00 PM">12:00 PM</option>
-                      <option value="1:00 PM">1:00 PM</option>
-                      <option value="2:00 PM">2:00 PM</option>
-                      <option value="3:00 PM">3:00 PM</option>
-                      <option value="4:00 PM">4:00 PM</option>
-                      <option value="5:00 PM">5:00 PM</option>
-                    </select>
                   </div>
                 </div>
 

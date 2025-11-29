@@ -34,7 +34,7 @@ export default function Newsletter() {
         throw error;
       }
 
-      navigate('/thank-you');
+      navigate('/newsletter-thank-you');
     } catch (error) {
       console.error('Error subscribing:', error);
       setStatus('error');

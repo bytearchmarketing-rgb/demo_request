@@ -13,8 +13,6 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
     email: '',
     phone: '',
     business_name: '',
-    preferred_date: '',
-    preferred_time: '',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -33,8 +31,6 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
           email: formData.email,
           phone: formData.phone,
           business_name: formData.business_name || null,
-          preferred_date: formData.preferred_date,
-          preferred_time: formData.preferred_time,
           message: formData.message || null
         }]);
 
@@ -44,7 +40,7 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
       setTimeout(() => {
         onClose();
         setStatus('idle');
-        setFormData({ name: '', email: '', phone: '', business_name: '', preferred_date: '', preferred_time: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', business_name: '', message: '' });
       }, 3000);
     } catch (error) {
       console.error('Error booking call:', error);
@@ -78,7 +74,7 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Booking Received!</h3>
               <p className="text-gray-600">
-                We'll reach out within 24 hours to confirm your call time.
+                We'll contact you within 24 hours to schedule your call.
               </p>
             </div>
           ) : (
@@ -144,47 +140,6 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
                   placeholder="Your Company"
                   disabled={status === 'loading'}
                 />
-              </div>
-
-              <div>
-                <label htmlFor="preferred_date" className="block text-sm font-semibold text-gray-900 mb-1">
-                  Preferred Date *
-                </label>
-                <input
-                  type="date"
-                  id="preferred_date"
-                  value={formData.preferred_date}
-                  onChange={(e) => setFormData({ ...formData, preferred_date: e.target.value })}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                  required
-                  disabled={status === 'loading'}
-                  min={new Date().toISOString().split('T')[0]}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="preferred_time" className="block text-sm font-semibold text-gray-900 mb-1">
-                  Preferred Time *
-                </label>
-                <select
-                  id="preferred_time"
-                  value={formData.preferred_time}
-                  onChange={(e) => setFormData({ ...formData, preferred_time: e.target.value })}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                  required
-                  disabled={status === 'loading'}
-                >
-                  <option value="">Select a time</option>
-                  <option value="9:00 AM">9:00 AM</option>
-                  <option value="10:00 AM">10:00 AM</option>
-                  <option value="11:00 AM">11:00 AM</option>
-                  <option value="12:00 PM">12:00 PM</option>
-                  <option value="1:00 PM">1:00 PM</option>
-                  <option value="2:00 PM">2:00 PM</option>
-                  <option value="3:00 PM">3:00 PM</option>
-                  <option value="4:00 PM">4:00 PM</option>
-                  <option value="5:00 PM">5:00 PM</option>
-                </select>
               </div>
 
               <div>
