@@ -41,12 +41,12 @@ export default function Header() {
             >
               Newsletter
             </Link>
-            <a
-              href="#book-call"
+            <Link
+              to="/book-call"
               className="px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-orange-500/30 transform hover:scale-105 transition-all duration-200"
             >
               Book a Call
-            </a>
+            </Link>
           </div>
 
           <button
@@ -86,13 +86,13 @@ export default function Header() {
             >
               Newsletter
             </Link>
-            <a
-              href="#book-call"
+            <Link
+              to="/book-call"
               onClick={() => setIsMenuOpen(false)}
               className="block px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg text-center"
             >
               Book a Call
-            </a>
+            </Link>
           </div>
         )}
       </nav>

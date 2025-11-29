@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { Mail, CheckCircle, TrendingUp, Lightbulb, Target, Loader, FileText, Calendar, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { supabase } from '../lib/supabase';
 
 export default function Newsletter() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: '', email: '' });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
 
@@ -32,8 +34,7 @@ export default function Newsletter() {
         throw error;
       }
 
-      setStatus('success');
-      setFormData({ name: '', email: '' });
+      navigate('/thank-you');
     } catch (error) {
       console.error('Error subscribing:', error);
       setStatus('error');
@@ -67,26 +68,7 @@ export default function Newsletter() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
-            {status === 'success' ? (
-              <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-12 text-center">
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-10 h-10 text-green-600" />
-                </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  You're Subscribed!
-                </h2>
-                <p className="text-lg text-gray-600 mb-6">
-                  Check your inbox for a welcome email with your first growth tip.
-                </p>
-                <button
-                  onClick={() => setStatus('idle')}
-                  className="text-orange-600 font-semibold hover:text-orange-700"
-                >
-                  Subscribe another email
-                </button>
-              </div>
-            ) : (
-              <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 md:p-12">
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 md:p-12">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
@@ -150,7 +132,6 @@ export default function Newsletter() {
                   </p>
                 </form>
               </div>
-            )}
           </div>
         </div>
       </section>

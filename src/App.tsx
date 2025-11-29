@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AIServices from './pages/AIServices';
 import Newsletter from './pages/Newsletter';
+import BookCall from './pages/BookCall';
+import ThankYou from './pages/ThankYou';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/ai-services" element={<AIServices />} />
         <Route path="/newsletter" element={<Newsletter />} />
+        <Route path="/book-call" element={<BookCall />} />
+        <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
     </Router>
   );
