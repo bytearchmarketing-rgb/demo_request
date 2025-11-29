@@ -55,6 +55,11 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
           <p>&copy; {currentYear} Byte Arch Marketing. All rights reserved.</p>
+          <p className="mt-2">
+            <Link to="/privacy-policy" className="hover:text-orange-500 transition-colors">
+              Privacy Policy
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

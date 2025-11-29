@@ -4,6 +4,7 @@ import AIServices from './pages/AIServices';
 import Newsletter from './pages/Newsletter';
 import BookCall from './pages/BookCall';
 import ThankYou from './pages/ThankYou';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/book-call" element={<BookCall />} />
         <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
   );
