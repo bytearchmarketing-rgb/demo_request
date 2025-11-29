@@ -62,9 +62,9 @@ export default function BookCall() {
             </h1>
 
             <p className="text-xl text-gray-600 mb-8">
-              Let's discuss how AI-powered marketing automation can help grow your business.
-              In this 30-minute call, we'll analyze your current marketing efforts and show you
-              exactly how automation can help you capture more leads and increase revenue.
+              Let's create a custom marketing plan tailored to your business goals.
+              In this 30-minute call, we'll analyze your current marketing efforts and design
+              a strategic roadmap to help you capture more leads and increase revenue.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mt-12">
