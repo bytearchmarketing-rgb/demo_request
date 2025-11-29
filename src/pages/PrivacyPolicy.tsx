@@ -170,8 +170,7 @@ export default function PrivacyPolicy() {
                 </p>
                 <div className="bg-gray-50 rounded-lg p-6 space-y-2">
                   <p className="text-gray-900 font-semibold">Byte Arch Marketing</p>
-                  <p className="text-gray-600">Email: <a href="mailto:contact@bytearchmarketing.com" className="text-orange-600 hover:text-orange-700">contact@bytearchmarketing.com</a></p>
-                  <p className="text-gray-600">Phone: <a href="tel:+15551234567" className="text-orange-600 hover:text-orange-700">(555) 123-4567</a></p>
+                  <p className="text-gray-600">Email: <a href="mailto:mfife@bytearchmarketing.com" className="text-orange-600 hover:text-orange-700">mfife@bytearchmarketing.com</a></p>
                 </div>
               </div>
 
