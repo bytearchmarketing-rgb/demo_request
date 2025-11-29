@@ -11,8 +11,11 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
-    biggestProblem: ''
+    phone: '',
+    business_name: '',
+    preferred_date: '',
+    preferred_time: '',
+    message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
@@ -28,8 +31,11 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
         .insert([{
           name: formData.name,
           email: formData.email,
-          company: formData.company,
-          biggest_problem: formData.biggestProblem
+          phone: formData.phone,
+          business_name: formData.business_name || null,
+          preferred_date: formData.preferred_date,
+          preferred_time: formData.preferred_time,
+          message: formData.message || null
         }]);
 
       if (error) throw error;
@@ -38,7 +44,7 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
       setTimeout(() => {
         onClose();
         setStatus('idle');
-        setFormData({ name: '', email: '', company: '', biggestProblem: '' });
+        setFormData({ name: '', email: '', phone: '', business_name: '', preferred_date: '', preferred_time: '', message: '' });
       }, 3000);
     } catch (error) {
       console.error('Error booking call:', error);
@@ -110,33 +116,88 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
               </div>
 
               <div>
-                <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-1">
-                  Company Name *
+                <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-1">
+                  Phone Number *
                 </label>
                 <input
-                  type="text"
-                  id="company"
-                  value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  type="tel"
+                  id="phone"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                  placeholder="Your Company"
+                  placeholder="(555) 123-4567"
                   required
                   disabled={status === 'loading'}
                 />
               </div>
 
               <div>
-                <label htmlFor="biggestProblem" className="block text-sm font-semibold text-gray-900 mb-1">
-                  Biggest Problem Area *
+                <label htmlFor="business_name" className="block text-sm font-semibold text-gray-900 mb-1">
+                  Business Name
+                </label>
+                <input
+                  type="text"
+                  id="business_name"
+                  value={formData.business_name}
+                  onChange={(e) => setFormData({ ...formData, business_name: e.target.value })}
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  placeholder="Your Company"
+                  disabled={status === 'loading'}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="preferred_date" className="block text-sm font-semibold text-gray-900 mb-1">
+                  Preferred Date *
+                </label>
+                <input
+                  type="date"
+                  id="preferred_date"
+                  value={formData.preferred_date}
+                  onChange={(e) => setFormData({ ...formData, preferred_date: e.target.value })}
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  required
+                  disabled={status === 'loading'}
+                  min={new Date().toISOString().split('T')[0]}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="preferred_time" className="block text-sm font-semibold text-gray-900 mb-1">
+                  Preferred Time *
+                </label>
+                <select
+                  id="preferred_time"
+                  value={formData.preferred_time}
+                  onChange={(e) => setFormData({ ...formData, preferred_time: e.target.value })}
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  required
+                  disabled={status === 'loading'}
+                >
+                  <option value="">Select a time</option>
+                  <option value="9:00 AM">9:00 AM</option>
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="11:00 AM">11:00 AM</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="1:00 PM">1:00 PM</option>
+                  <option value="2:00 PM">2:00 PM</option>
+                  <option value="3:00 PM">3:00 PM</option>
+                  <option value="4:00 PM">4:00 PM</option>
+                  <option value="5:00 PM">5:00 PM</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-1">
+                  Tell us about your business
                 </label>
                 <textarea
-                  id="biggestProblem"
-                  value={formData.biggestProblem}
-                  onChange={(e) => setFormData({ ...formData, biggestProblem: e.target.value })}
-                  rows={4}
+                  id="message"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  rows={3}
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
-                  placeholder="What's the biggest challenge your company is facing right now?"
-                  required
+                  placeholder="What challenges are you facing?"
                   disabled={status === 'loading'}
                 />
               </div>
