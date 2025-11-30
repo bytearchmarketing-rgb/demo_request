@@ -33,7 +33,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-delay-1">
-              Top 5 Google Rankings
+              1st Page on Google
               <span className="block text-orange-600 mt-2">in 90 Days or Your Money Back</span>
             </h1>
 
