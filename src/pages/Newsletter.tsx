@@ -46,19 +46,28 @@ export default function Newsletter() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-gradient-to-br from-orange-50 via-white to-orange-50">
-        <div className="container mx-auto px-6">
+      <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-gradient-to-br from-orange-50 via-white to-orange-50 overflow-hidden relative">
+        <div className="absolute top-20 right-10 animate-float opacity-20 pointer-events-none hidden lg:block">
+          <Mail className="w-32 h-32 text-orange-400" />
+        </div>
+        <div className="absolute bottom-20 left-10 animate-float-delayed opacity-20 pointer-events-none hidden lg:block">
+          <TrendingUp className="w-40 h-40 text-orange-400" />
+        </div>
+        <div className="absolute top-1/2 right-1/4 animate-float-slow opacity-10 pointer-events-none hidden lg:block">
+          <Lightbulb className="w-24 h-24 text-orange-400" />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold mb-6 animate-fade-in">
               <Mail className="w-4 h-4" />
               Free Daily Insights
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-delay-1">
               The Growth Edge Newsletter
             </h1>
 
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 mb-8 animate-fade-in-delay-2">
               Daily marketing tips, automation strategies, and growth insights delivered straight to your inbox. Designed specifically for busy business owners in Detroit and beyond.
             </p>
           </div>
@@ -68,7 +77,7 @@ export default function Newsletter() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 md:p-12">
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 md:p-12 animate-fade-in hover:shadow-xl transition-shadow duration-300">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
@@ -149,7 +158,7 @@ export default function Newsletter() {
             </div>
 
             <div className="space-y-8 mb-16">
-              <article className="bg-white rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg">
+              <article className="bg-white rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in">
                 <div className="p-6 md:p-8">
                   <button
                     onClick={() => {
@@ -184,7 +193,7 @@ export default function Newsletter() {
                 </div>
               </article>
 
-              <article className="bg-white rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg">
+              <article className="bg-white rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in">
                 <div className="p-6 md:p-8">
                   <button
                     onClick={() => {
@@ -219,7 +228,7 @@ export default function Newsletter() {
                 </div>
               </article>
 
-              <article className="bg-white rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg">
+              <article className="bg-white rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in">
                 <div className="p-6 md:p-8">
                   <button
                     onClick={() => {
@@ -264,8 +273,8 @@ export default function Newsletter() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-xl p-8 border-2 border-gray-100">
+            <div className="grid md:grid-cols-3 gap-8 animate-fade-in">
+              <div className="bg-white rounded-xl p-8 border-2 border-gray-100 hover:border-orange-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
                   <TrendingUp className="w-7 h-7 text-orange-600" />
                 </div>
@@ -277,7 +286,7 @@ export default function Newsletter() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-8 border-2 border-gray-100">
+              <div className="bg-white rounded-xl p-8 border-2 border-gray-100 hover:border-orange-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                   <Lightbulb className="w-7 h-7 text-blue-600" />
                 </div>
@@ -289,7 +298,7 @@ export default function Newsletter() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-8 border-2 border-gray-100">
+              <div className="bg-white rounded-xl p-8 border-2 border-gray-100 hover:border-orange-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4">
                   <Target className="w-7 h-7 text-green-600" />
                 </div>

@@ -45,26 +45,32 @@ export default function BookCall() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-gradient-to-br from-orange-50 via-white to-orange-50">
-        <div className="container mx-auto px-6">
+      <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-gradient-to-br from-orange-50 via-white to-orange-50 overflow-hidden relative">
+        <div className="absolute top-20 right-10 animate-float opacity-20 pointer-events-none hidden lg:block">
+          <Calendar className="w-32 h-32 text-orange-400" />
+        </div>
+        <div className="absolute bottom-20 left-10 animate-float-delayed opacity-20 pointer-events-none hidden lg:block">
+          <CheckCircle className="w-40 h-40 text-orange-400" />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold mb-6 animate-fade-in">
               <Calendar className="w-4 h-4" />
               Free Consultation
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-delay-1">
               Book Your Strategy Call
             </h1>
 
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 mb-8 animate-fade-in-delay-2">
               Let's create a custom marketing plan tailored to your business goals.
               In this 30-minute call, we'll analyze your current marketing efforts and design
               a strategic roadmap to help you capture more leads and increase revenue.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-6 mt-12">
-              <div className="bg-white rounded-xl p-6 border-2 border-gray-100">
+            <div className="grid md:grid-cols-3 gap-6 mt-12 animate-fade-in-delay-3">
+              <div className="bg-white rounded-xl p-6 border-2 border-gray-100 hover:border-orange-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Clock className="w-6 h-6 text-orange-600" />
                 </div>
@@ -72,7 +78,7 @@ export default function BookCall() {
                 <p className="text-gray-600 text-sm">Quick but comprehensive strategy session</p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-2 border-gray-100">
+              <div className="bg-white rounded-xl p-6 border-2 border-gray-100 hover:border-orange-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Calendar className="w-6 h-6 text-blue-600" />
                 </div>
@@ -80,7 +86,7 @@ export default function BookCall() {
                 <p className="text-gray-600 text-sm">Zero pressure, just valuable insights</p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 border-2 border-gray-100">
+              <div className="bg-white rounded-xl p-6 border-2 border-gray-100 hover:border-orange-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
@@ -97,7 +103,7 @@ export default function BookCall() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 md:p-12">
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300 animate-fade-in">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Schedule Your Call</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
