@@ -162,6 +162,41 @@ export default function Newsletter() {
                 <div className="p-6 md:p-8">
                   <button
                     onClick={() => {
+                      setSelectedImage('/Why-Your-Blog-Posts-Arent-Ranking-And-the-5-Minute-Fix (1).png');
+                      setIsModalOpen(true);
+                    }}
+                    className="w-full text-left group"
+                  >
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                        <FileText className="w-6 h-6 text-orange-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+                          Why Your Blog Posts Aren't Ranking (And the 5 Minute Fix)
+                        </h3>
+                        <div className="flex items-center gap-2 text-sm text-gray-500 mt-1">
+                          <Calendar className="w-4 h-4" />
+                          <span>November 30, 2025</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-xl overflow-hidden cursor-pointer group-hover:opacity-90 transition-opacity">
+                      <img
+                        src="/Why-Your-Blog-Posts-Arent-Ranking-And-the-5-Minute-Fix (1).png"
+                        alt="Why Your Blog Posts Aren't Ranking And the 5 Minute Fix"
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </button>
+                </div>
+              </article>
+
+              <article className="bg-white rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in">
+                <div className="p-6 md:p-8">
+                  <button
+                    onClick={() => {
                       setSelectedImage('/Is-Your-Website-Secretly-Invisible-to-Google (2).png');
                       setIsModalOpen(true);
                     }}
