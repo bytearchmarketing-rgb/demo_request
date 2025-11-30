@@ -42,7 +42,7 @@ export default function Home() {
             </p>
 
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto animate-fade-in-delay-2">
-              Our proven SEO system gets Detroit businesses to the top of Google search results. If we don't get you into the top 5 rankings for your target keywords within 90 days, you get a full refund. Guaranteed.
+              Our proven SEO system gets Detroit businesses to the top of Google search results. If we don't get you on the 1st page of Google for your target keywords within 90 days, you get a full refund. Guaranteed.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-delay-3">
@@ -123,7 +123,7 @@ export default function Home() {
               Our 90 Day Money Back Guarantee
             </h2>
             <p className="text-xl text-orange-50 mb-6 leading-relaxed">
-              We're so confident in our SEO system that we offer this guarantee: If we don't get your business into the top 5 Google rankings for your target keywords within 90 days, you get every penny back. No questions asked.
+              We're so confident in our SEO system that we offer this guarantee: If we don't get your business on the 1st page of Google for your target keywords within 90 days, you get every penny back. No questions asked.
             </p>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto">
               <p className="text-white font-semibold text-lg">
