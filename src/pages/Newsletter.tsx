@@ -153,6 +153,41 @@ export default function Newsletter() {
                 <div className="p-6 md:p-8">
                   <button
                     onClick={() => {
+                      setSelectedImage('/Is-Your-Website-Secretly-Invisible-to-Google (2).png');
+                      setIsModalOpen(true);
+                    }}
+                    className="w-full text-left group"
+                  >
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                        <FileText className="w-6 h-6 text-orange-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+                          Is Your Website Secretly Invisible to Google?
+                        </h3>
+                        <div className="flex items-center gap-2 text-sm text-gray-500 mt-1">
+                          <Calendar className="w-4 h-4" />
+                          <span>November 29, 2025</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-xl overflow-hidden cursor-pointer group-hover:opacity-90 transition-opacity">
+                      <img
+                        src="/Is-Your-Website-Secretly-Invisible-to-Google (2).png"
+                        alt="Is Your Website Secretly Invisible to Google?"
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </button>
+                </div>
+              </article>
+
+              <article className="bg-white rounded-2xl overflow-hidden border-2 border-gray-200 shadow-lg">
+                <div className="p-6 md:p-8">
+                  <button
+                    onClick={() => {
                       setSelectedImage('/Why-Your-Competitors-Are-Stealing-Your-Customers-And-How-to-Stop-It.png');
                       setIsModalOpen(true);
                     }}
