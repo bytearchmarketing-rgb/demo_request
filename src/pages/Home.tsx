@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react';
-import { Search, TrendingUp, Target, Building2, Home as HomeIcon, ShoppingCart, Wrench, Phone, Award } from 'lucide-react';
+import { Target, Home as HomeIcon, ShoppingCart, Wrench, Phone, Award } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AnimatedBackground from '../components/AnimatedBackground';
 import CTAButton from '../components/CTAButton';
 import TrustBadge from '../components/TrustBadge';
-import TestimonialCard from '../components/TestimonialCard';
 import IndustryCard from '../components/IndustryCard';
 import ExitIntentModal from '../components/ExitIntentModal';
 import SocialProofNotification from '../components/SocialProofNotification';
 import StickyHeader from '../components/StickyHeader';
 import GuaranteeSection from '../components/GuaranteeSection';
 import ProcessStep from '../components/ProcessStep';
+import Animated3DIcon from '../components/Animated3DIcon';
+import TrustMetrics from '../components/TrustMetrics';
 
 export default function Home() {
   const [isExitModalOpen, setIsExitModalOpen] = useState(false);
@@ -96,75 +97,32 @@ export default function Home() {
         </div>
       </section>
 
+      <TrustMetrics />
+
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Trusted by Detroit's Leading Businesses
-            </h2>
-            <p className="text-xl text-gray-600">
-              Join Detroit businesses growing with guaranteed results
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <div
-                key={i}
-                className="aspect-video bg-gray-50 border-2 border-dashed border-gray-200 rounded-lg flex items-center justify-center hover:border-orange-300 transition-colors duration-300"
-              >
-                <Building2 className="w-8 h-8 text-gray-300" />
-              </div>
-            ))}
-          </div>
-
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="text-center group hover:transform hover:scale-105 transition-all duration-300 animate-bounce-in-delay-1">
-              <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors duration-300 animate-float">
-                <Search className="w-8 h-8 text-orange-600 group-hover:scale-110 transition-transform duration-300" />
-              </div>
+              <Animated3DIcon type="search" delay={0} />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Keyword Domination</h3>
               <p className="text-gray-600">
                 We identify and target the exact keywords your customers are searching for, then optimize your site to rank at the top.
               </p>
             </div>
             <div className="text-center group hover:transform hover:scale-105 transition-all duration-300 animate-bounce-in-delay-2">
-              <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors duration-300 animate-float-delayed">
-                <TrendingUp className="w-8 h-8 text-orange-600 group-hover:scale-110 transition-transform duration-300" />
-              </div>
+              <Animated3DIcon type="growth" delay={1} />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Traffic Growth</h3>
               <p className="text-gray-600">
                 Watch your website traffic surge as you climb the rankings. More visibility means more customers and more revenue.
               </p>
             </div>
             <div className="text-center group hover:transform hover:scale-105 transition-all duration-300 animate-bounce-in-delay-3">
-              <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors duration-300 animate-float-slow">
-                <Target className="w-8 h-8 text-orange-600 group-hover:scale-110 transition-transform duration-300" />
-              </div>
+              <Animated3DIcon type="location" delay={2} />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Local Focus</h3>
               <p className="text-gray-600">
                 Specialized strategies for Detroit area businesses to dominate local search results and attract nearby customers.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Success Stories
-            </h2>
-            <p className="text-xl text-gray-600">
-              Real results from Detroit businesses
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <TestimonialCard />
-            <TestimonialCard />
-            <TestimonialCard />
           </div>
         </div>
       </section>

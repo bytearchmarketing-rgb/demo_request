@@ -136,7 +136,7 @@ export default function ExitIntentModal({ isOpen, onClose }: ExitIntentModalProp
                   onChange={(e) => setContact(e.target.value)}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
-                  placeholder="john@business.com or (313) 555-0123"
+                  placeholder="john@business.com or (313) 451-4280"
                 />
               </div>
 

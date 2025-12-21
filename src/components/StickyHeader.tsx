@@ -26,22 +26,22 @@ export default function StickyHeader({ onBookCall }: StickyHeaderProps) {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg animate-slide-in-right">
       <div className="container mx-auto px-6 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 group cursor-pointer">
           <img
             src="/logo.png"
             alt="ByteArch Marketing"
-            className="h-10 w-auto"
+            className="h-10 w-auto transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.4)]"
           />
           <span className="font-bold text-gray-900 hidden sm:block">ByteArch Marketing</span>
         </div>
 
         <div className="flex items-center gap-3">
           <a
-            href="tel:+13135550123"
+            href="tel:+13134514280"
             className="hidden md:flex items-center gap-2 text-gray-700 hover:text-orange-600 transition-colors"
           >
             <Phone className="w-4 h-4" />
-            <span className="font-semibold">(313) 555-0123</span>
+            <span className="font-semibold">(313) 451-4280</span>
           </a>
 
           <button

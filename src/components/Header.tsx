@@ -12,8 +12,12 @@ export default function Header() {
     <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center">
-            <img src="/logo.png" alt="Byte Arch Marketing" className="h-12 w-auto" />
+          <Link to="/" className="flex items-center group">
+            <img
+              src="/logo.png"
+              alt="Byte Arch Marketing"
+              className="h-12 w-auto transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.4)]"
+            />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
