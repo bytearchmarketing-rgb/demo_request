@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Target, Home as HomeIcon, ShoppingCart, Wrench, Phone, Award, Search, TrendingUp } from 'lucide-react';
+import { Target, Home as HomeIcon, ShoppingCart, Wrench, Phone, Heart, Search, TrendingUp } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AnimatedBackground from '../components/AnimatedBackground';
@@ -202,10 +202,10 @@ export default function Home() {
             />
 
             <IndustryCard
-              icon={Award}
-              title="Dental Practices"
-              painPoint="New patients are hard to find. Your schedule has openings but competitors with better Google rankings are booked solid."
-              solution="Dominate local search for dentist Detroit and emergency dental care. Fill your schedule with new patient appointments."
+              icon={Heart}
+              title="Medical & Healthcare Practices"
+              painPoint="Patients are searching for care but finding other providers. Your practice has capacity but competitors rank higher and get booked first."
+              solution="Rank for medical Detroit, specialist near me, and urgent care searches. Fill your schedule with new patients actively seeking your services."
               delay={2}
             />
 
