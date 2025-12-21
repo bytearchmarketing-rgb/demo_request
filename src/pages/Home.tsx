@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Target, Home as HomeIcon, ShoppingCart, Wrench, Phone, Award } from 'lucide-react';
+import { Target, Home as HomeIcon, ShoppingCart, Wrench, Phone, Award, Search, TrendingUp } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AnimatedBackground from '../components/AnimatedBackground';
