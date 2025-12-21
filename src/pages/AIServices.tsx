@@ -1,11 +1,11 @@
-import { useState } from 'react';
 import { Bot, Zap, Clock, TrendingUp, ArrowRight, CheckCircle, Star } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import BookCallModal from '../components/BookCallModal';
 
 export default function AIServices() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleCalendlyClick = () => {
+    window.open('https://calendly.com/bytearchmarketing/demo-meeting', '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -38,7 +38,7 @@ export default function AIServices() {
             </p>
 
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={handleCalendlyClick}
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold text-lg rounded-lg hover:shadow-2xl hover:shadow-blue-600/40 transform hover:scale-110 transition-all duration-300 inline-flex items-center gap-2 animate-fade-in-delay-3"
             >
               Book a Call
@@ -182,7 +182,7 @@ export default function AIServices() {
               Let's discuss how AI automation can transform your business operations and accelerate your growth
             </p>
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={handleCalendlyClick}
               className="px-10 py-4 bg-white text-blue-600 font-bold text-lg rounded-lg hover:shadow-2xl transform hover:scale-110 transition-all duration-300 inline-flex items-center gap-2 animate-fade-in-delay-2"
             >
               Book a Call
@@ -196,7 +196,6 @@ export default function AIServices() {
       </section>
 
       <Footer />
-      <BookCallModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

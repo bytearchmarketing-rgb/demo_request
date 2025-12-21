@@ -1,11 +1,11 @@
-import { useState } from 'react';
 import { Bot, Workflow, Link2, ArrowRight, CheckCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import BookCallModal from '../components/BookCallModal';
 
 export default function Services() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleCalendlyClick = () => {
+    window.open('https://calendly.com/bytearchmarketing/demo-meeting', '_blank');
+  };
 
   const services = [
     {
@@ -66,7 +66,7 @@ export default function Services() {
               From automation to integration to AI-powered support, we build the systems that help Detroit businesses scale efficiently.
             </p>
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={handleCalendlyClick}
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg rounded-lg hover:shadow-2xl hover:shadow-orange-500/40 transform hover:-translate-y-1 transition-all duration-200"
             >
               Schedule a Consultation
@@ -108,7 +108,7 @@ export default function Services() {
                         </div>
 
                         <button
-                          onClick={() => setIsModalOpen(true)}
+                          onClick={handleCalendlyClick}
                           className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transform hover:-translate-y-0.5 transition-all duration-200"
                         >
                           Learn More
@@ -187,7 +187,7 @@ export default function Services() {
               You focus on what you do best. We handle the rest. Together we'll build something extraordinary.
             </p>
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={handleCalendlyClick}
               className="px-10 py-4 bg-white text-orange-600 font-bold text-lg rounded-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200 inline-flex items-center gap-2"
             >
               Start Your Project
@@ -198,7 +198,6 @@ export default function Services() {
       </section>
 
       <Footer />
-      <BookCallModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

@@ -8,6 +8,10 @@ export default function Header() {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const handleCalendlyClick = () => {
+    window.open('https://calendly.com/bytearchmarketing/demo-meeting', '_blank');
+  };
+
   return (
     <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
       <nav className="container mx-auto px-6 py-4">
@@ -45,12 +49,12 @@ export default function Header() {
             >
               Newsletter
             </Link>
-            <Link
-              to="/book-call"
+            <button
+              onClick={handleCalendlyClick}
               className="px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-orange-500/30 transform hover:scale-105 transition-all duration-200"
             >
               Book a Call
-            </Link>
+            </button>
           </div>
 
           <button
@@ -90,13 +94,15 @@ export default function Header() {
             >
               Newsletter
             </Link>
-            <Link
-              to="/book-call"
-              onClick={() => setIsMenuOpen(false)}
-              className="block px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg text-center"
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                handleCalendlyClick();
+              }}
+              className="block px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg text-center w-full"
             >
               Book a Call
-            </Link>
+            </button>
           </div>
         )}
       </nav>
