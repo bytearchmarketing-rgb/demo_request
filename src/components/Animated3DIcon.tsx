@@ -41,20 +41,18 @@ export default function Animated3DIcon({ type, delay = 0 }: Animated3DIconProps)
         return (
           <div className="relative w-full h-full">
             <div className="absolute inset-0 bg-gradient-to-br from-orange-100 to-orange-50 rounded-3xl shadow-2xl overflow-hidden" style={{ transform: 'translateZ(10px)' }}>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-16 bg-gradient-to-br from-orange-200 to-orange-100 rounded-lg shadow-lg" style={{ transform: 'translateZ(15px)' }}>
-                <div className="absolute top-2 left-2 right-2 space-y-1.5">
-                  <div className="w-full h-1 bg-orange-400 rounded-full opacity-50"></div>
-                  <div className="w-4/5 h-1 bg-orange-400 rounded-full opacity-40"></div>
-                  <div className="w-3/4 h-1 bg-orange-400 rounded-full opacity-30"></div>
-                </div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-orange-500 rounded-full shadow-xl flex items-center justify-center" style={{ transform: 'translateZ(30px)' }}>
+                <div className="absolute inset-0 bg-orange-400 rounded-full opacity-40"></div>
+                <div className="absolute inset-2 bg-orange-300 rounded-full opacity-50"></div>
+                <div className="absolute inset-4 bg-orange-200 rounded-full"></div>
+                <span className="relative text-white font-black text-2xl z-10" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>#1</span>
               </div>
-              <div className="absolute top-1/2 right-3 transform -translate-y-1/2 w-10 h-10 bg-orange-500 rounded-full shadow-lg flex items-center justify-center" style={{ transform: 'translateZ(25px)' }}>
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
-                  <path d="M12 8v8M8 12h8" />
-                </svg>
-                <div className="absolute inset-0 border-3 border-orange-600 rounded-full animate-pulse opacity-50"></div>
-              </div>
-              <div className="absolute top-1/2 right-3 transform -translate-y-1/2 w-14 h-14 border-2 border-orange-400 rounded-full opacity-30" style={{ transform: 'translateZ(20px)' }}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 border-3 border-orange-400 rounded-full opacity-40" style={{ transform: 'translateZ(20px)' }}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 border-2 border-orange-300 rounded-full opacity-30" style={{ transform: 'translateZ(15px)' }}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 border-2 border-orange-200 rounded-full opacity-20" style={{ transform: 'translateZ(10px)' }}></div>
+              <div className="absolute top-3 left-3 px-2 py-1 bg-orange-500 rounded text-white text-xs font-bold shadow-lg" style={{ transform: 'translateZ(25px)' }}>SEO</div>
+              <div className="absolute bottom-3 right-3 px-2 py-1 bg-orange-500 rounded text-white text-xs font-bold shadow-lg" style={{ transform: 'translateZ(25px)' }}>RANK</div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-orange-200 rounded-full opacity-10 animate-ping" style={{ animationDuration: '3s' }}></div>
             </div>
           </div>
         );
@@ -101,21 +99,30 @@ export default function Animated3DIcon({ type, delay = 0 }: Animated3DIconProps)
         return (
           <div className="relative w-full h-full">
             <div className="absolute inset-0 bg-gradient-to-br from-orange-100 to-orange-50 rounded-3xl shadow-2xl overflow-hidden" style={{ transform: 'translateZ(10px)' }}>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ transform: 'translateZ(25px)' }}>
-                <div className="relative w-14 h-16 bg-gradient-to-b from-orange-500 to-orange-600 rounded-t-full shadow-xl">
-                  <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white rounded-full flex items-center justify-center">
-                    <div className="w-2.5 h-2.5 bg-orange-500 rounded-full"></div>
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-12 bg-gradient-to-b from-orange-500 to-orange-600 rounded-t-lg shadow-xl" style={{ transform: 'translateZ(25px)' }}>
+                <div className="absolute inset-x-0 top-0 h-6 bg-orange-400 opacity-30 rounded-t-lg"></div>
+                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-6 h-3 bg-orange-300 rounded-sm"></div>
+                <div className="absolute bottom-3 left-2 w-2 h-3 bg-orange-200 opacity-60"></div>
+                <div className="absolute bottom-3 right-2 w-2 h-3 bg-orange-200 opacity-60"></div>
+              </div>
+              <div className="absolute top-6 left-1/2 transform -translate-x-1/2" style={{ transform: 'translateZ(30px)' }}>
+                <div className="relative w-8 h-10 bg-gradient-to-b from-orange-600 to-orange-700 rounded-t-full shadow-lg">
+                  <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 bg-orange-600 rounded-full"></div>
                   </div>
-                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-orange-600 rotate-45" style={{ borderRadius: '0 0 2px 0' }}></div>
-                </div>
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1 w-3 h-3">
-                  <div className="absolute inset-0 bg-orange-500 rounded-full animate-ping opacity-75"></div>
-                  <div className="absolute inset-0 bg-orange-500 rounded-full"></div>
+                  <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-orange-700 rotate-45" style={{ borderRadius: '0 0 2px 0' }}></div>
                 </div>
               </div>
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-20 h-20 border-2 border-orange-400 rounded-full opacity-30" style={{ transform: 'translateZ(8px)' }}></div>
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-32 border-2 border-orange-300 rounded-full opacity-20" style={{ transform: 'translateZ(5px)' }}></div>
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-40 border border-orange-200 rounded-full opacity-10" style={{ transform: 'translateZ(2px)' }}></div>
+              <svg className="absolute inset-0 w-full h-full p-3" viewBox="0 0 100 100" style={{ transform: 'translateZ(15px)' }}>
+                <path d="M 10 80 Q 30 70, 50 75 T 90 80" fill="none" stroke="#fb923c" strokeWidth="2" opacity="0.4" strokeDasharray="3,3" />
+                <path d="M 20 60 Q 40 55, 60 58 T 85 65" fill="none" stroke="#fb923c" strokeWidth="2" opacity="0.3" strokeDasharray="3,3" />
+              </svg>
+              <div className="absolute top-3 right-3 w-6 h-6 bg-orange-500 rounded-full shadow-lg flex items-center justify-center" style={{ transform: 'translateZ(20px)' }}>
+                <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" opacity="0.8" />
+                </svg>
+              </div>
+              <div className="absolute bottom-3 left-3 px-2 py-1 bg-orange-600 rounded text-white text-xs font-bold shadow-lg" style={{ transform: 'translateZ(22px)' }}>LOCAL</div>
             </div>
           </div>
         );
