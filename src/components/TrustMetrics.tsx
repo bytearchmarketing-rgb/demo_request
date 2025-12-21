@@ -13,6 +13,9 @@ function Metric({ icon: Icon, value, label, delay }: MetricProps) {
   const metricRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const element = metricRef.current;
+    if (!element) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -22,14 +25,10 @@ function Metric({ icon: Icon, value, label, delay }: MetricProps) {
       { threshold: 0.1 }
     );
 
-    if (metricRef.current) {
-      observer.observe(metricRef.current);
-    }
+    observer.observe(element);
 
     return () => {
-      if (metricRef.current) {
-        observer.unobserve(metricRef.current);
-      }
+      observer.unobserve(element);
     };
   }, []);
 
